@@ -1,0 +1,61 @@
+{
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');"
+		],
+		"description": "Log output to console"
+	},
+	"amis: page": {
+		"prefix": "page",
+		"body": [
+			"{",
+			"   \"type\": \"page\"",
+			"   \"body\": [{$1}]",
+			"}"
+		]
+	},
+	"amis: crud": {
+		"prefix": "crud",
+		"body": [
+			"{",
+			"   \"type\": \"crud\",",
+			"   \"api\": {",
+			"     \"method\": \"get\",",
+			"     \"url\": \"$1\"",
+			"    },",
+			"   \"filter\": [],",
+			"   \"columns\": [",
+			"      {",
+			"       \"name\": \"id\",",
+			"       \"label\": \"ID\",",
+			"       \"type\": \"text\"",
+			"      }",
+			"    ]",
+			"}"
+		]
+	},
+	"amis: button": {
+		"prefix": "button",
+		"body": [
+			"{",
+			"   \"type\": \"button\",",
+			"   \"label\": \"$1\"",
+			"}"
+		]
+	},
+	"amis: dialog": {
+		"prefix": "button",
+		"body": [
+			"{",
+			"   \"type\": \"button\",",
+			"   \"label\": \"$1\"",
+			"   \"actionType\": \"dialog\"",
+			"   \"dialog\": {",
+			"     \"title\": \"$2\",",
+			"     \"body\": \"{}\"",
+			"    }",
+			"}"
+		]
+	}
+}
