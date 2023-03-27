@@ -19,11 +19,19 @@
         "path": "./snippets.json"
       },
       {
+        "language": "javascriptreact",
+        "path": "./snippets.json"
+      },
+      {
         "language": "typescript",
         "path": "./snippets.json"
       },
       {
         "language": "json",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "typescriptreact",
         "path": "./snippets.json"
       }
     ],
