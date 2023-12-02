@@ -19,7 +19,30 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('Hello World from amis-analyzer!');
 	});
 
+
+	let mobxAction = vscode.commands.registerCommand('amis-analyzer.mobx-action', () => {
+		const editor = vscode.window.activeTextEditor;
+        if (!editor) {
+            vscode.window.showInformationMessage('No editor is active');
+            return;
+        }
+
+		const selection = editor.selection;
+        let text = editor.document.getText(selection);
+		let upperText = "";
+		if(text!=null && text.length>0) {
+			upperText = text.charAt(0).toUpperCase() + text.slice(1);
+		}
+
+		let generatedCode = `\t@action\n\tset${upperText} = (${text}) => {\n \t\tthis.${text} = ${text};\n\t}\n`;
+		const selectedLine = selection.active.line;
+		editor.edit((editBuilder) => {
+            editBuilder.insert(new vscode.Position(selectedLine + 1, 0), `\n${generatedCode}`);
+        });
+	});
+
 	context.subscriptions.push(disposable);
+	context.subscriptions.push(mobxAction);
 }
 
 // This method is called when your extension is deactivated

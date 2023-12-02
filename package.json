@@ -44,8 +44,20 @@
       {
         "command": "amis-analyzer.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "amis-analyzer.mobx-action",
+        "title": "Mobx Action Generator"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "amis-analyzer.mobx-action",
+          "group": "amis-analyzer"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
